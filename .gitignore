@@ -1,0 +1,21 @@
+# Build output
+target/
+*.log
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Local tooling
+.claude/
+.mcp.json
+
+# Local secrets
+application-local.yml
+
+# OS
+.DS_Store
+Thumbs.db

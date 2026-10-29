@@ -1,0 +1,23 @@
+
+spring:
+  application:
+    name: tlias-web-management
+  # 本地配置（不提交），用于覆盖数据库密码等敏感信息
+  config:
+    import: optional:classpath:application-local.yml
+  #mysql连接配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tlias
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+#分页插件配置
+pagehelper:
+  #分页合理化：页码<=0 查询第一页，页码超过总页数查询最后一页
+  reasonable: true
+  #指定数据库方言
+  helper-dialect: mysql
